@@ -1,0 +1,2 @@
+public class doudt1 {
+}
