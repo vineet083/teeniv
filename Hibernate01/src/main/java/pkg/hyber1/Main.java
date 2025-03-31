@@ -10,22 +10,31 @@ public class Main {
 
         Student s1 = new Student();
         s1.setSage(19);
-        s1.setRollno(99);
-        s1.setSname("luffy");
+        s1.setRollno(142);
+        s1.setSname("nami");
 
-        Configuration cfg = new Configuration();
-        cfg.addAnnotatedClass(pkg.hyber1.Student.class);
+//        Configuration cfg = new Configuration();
+//        cfg.addAnnotatedClass(pkg.hyber1.Student.class);
+//
+//        cfg.configure(); ///this loads xml files;
 
-        cfg.configure(); ///this loads xml files;
 
-
-        SessionFactory sf = cfg.buildSessionFactory();
+        SessionFactory sf =  new Configuration()
+                .addAnnotatedClass(pkg.hyber1.Student.class)
+                .configure()
+                .buildSessionFactory();
         Session session = sf.openSession();
 
         Transaction transaction = session.beginTransaction();
 
-        session.save(s1);
+        session.merge(s1);//this method updates the existing record if not found it add
+//        session.remove();removes a data
+
+//        session.persist(s1);
+
         transaction.commit();
+        session.close();
+        sf.close();
 
         System.out.println(s1);
     }
