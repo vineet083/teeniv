@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CollectionApi.iml" filepath="$PROJECT_DIR$/CollectionApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pkg.collection/pkg.collection.iml" filepath="$PROJECT_DIR$/pkg.collection/pkg.collection.iml" />
+    </modules>
+  </component>
+</project>
